@@ -5,16 +5,20 @@
     fd
     ripgrep
     emmylua-ls
+    stylua
+
+    nixd
     nil
     nixpkgs-fmt
+
     vscode-langservers-extracted
     superhtml
     biome
-    stylua
     tailwindcss-language-server
-    pyrefly
     fnm
     pnpm
+
+    pyrefly
     gcc
   ];
 }

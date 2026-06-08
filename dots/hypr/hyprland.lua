@@ -33,7 +33,7 @@ local mainMod  = "SUPER"
 -------------------
 
 hl.on("hyprland.start", function()
-    hl.exec_cmd("hyprpaper")
+    hl.exec_cmd("swaybg -i ~/nix-dots/dots/walls/dragon.png")
 end)
 
 
