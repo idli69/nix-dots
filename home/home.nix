@@ -16,6 +16,7 @@ in
     ./neovim.nix
     ./shell.nix
     ./git.nix
+    ./theme.nix
   ];
 
   home.username      = "idli";

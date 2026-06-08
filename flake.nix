@@ -9,6 +9,11 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    stylix = {
+      url = "github:nix-community/stylix/release-26.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -17,6 +22,7 @@
       nixpkgs,
       nixpkgs-unstable,
       home-manager,
+      stylix,
       ...
     }:
     {
@@ -29,6 +35,7 @@
 
         modules = [
           ./configuration.nix
+          stylix.nixosModules.stylix
           home-manager.nixosModules.home-manager
           {
             home-manager = {
