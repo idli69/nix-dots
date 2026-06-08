@@ -10,6 +10,7 @@
 ---- MONITORS ----
 ------------------
 
+hl.monitor({ output = "eDP-1", disabled = true })
 hl.monitor({
     output   = "",
     mode     = "preferred",
@@ -50,9 +51,9 @@ hl.env("HYPRCURSOR_SIZE", "24")
 
 hl.config({
     general = {
-        gaps_in     = 4,
-        gaps_out    = 8,
-        border_size = 2,
+        gaps_in     = 5,
+        gaps_out    = 5,
+        border_size = 1,
         col = {
             -- Rose Pine: mauve active, surface inactive
             active_border   = "rgba(c4a7e7ff)",
@@ -62,7 +63,7 @@ hl.config({
     },
 
     decoration = {
-        rounding = 8,
+        rounding = 0,
         blur = {
             enabled = true,
             size    = 4,
@@ -106,7 +107,7 @@ hl.config({
 
 -- Terminal & launcher
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
-hl.bind(mainMod .. " + D",      hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + Space",      hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + Q",      hl.dsp.window.close())
 hl.bind(mainMod .. " + F",      hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + V",      hl.dsp.window.float({ action = "toggle" }))
