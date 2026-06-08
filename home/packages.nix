@@ -20,5 +20,7 @@
     gh
     lazygit
     zed-editor
+
+    antigravity
   ];
 }
