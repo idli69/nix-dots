@@ -1,32 +1,38 @@
 # nix-dots
 
-NixOS config. Hyprland + home-manager on 26.05, Hyprland pulled from unstable for Lua config support.
+NixOS flake config. Hyprland on nixos-26.05, with Hyprland itself pulled from unstable for Lua config support.
 
 ## stack
 
-- hyprland (unstable) — lua config
-- ly — display manager
-- kitty — terminal
-- fuzzel — launcher
-- starship — prompt
-- neovim — editor
+| | |
+|---|---|
+| **wm** | hyprland (unstable, lua config) |
+| **display manager** | ly |
+| **terminal** | kitty |
+| **shell** | bash + starship |
+| **editor** | neovim |
+| **browser** | chromium |
+| **launcher** | rofi |
+| **font** | Geist Mono Nerd Font |
 
 ## structure
 
 ```
-flake.nix
-hardware-configuration.nix
-system/configuration.nix
-home/
-  home.nix
-  packages.nix
-  shell.nix
-  git.nix
-  neovim.nix
-config/
-  hyprland/
-  kitty/
-  nvim/
+nix-dots/
+├── flake.nix
+├── flake.lock
+├── hardware-configuration.nix
+├── configuration.nix          # system config
+├── home/                      # home-manager modules
+│   ├── home.nix
+│   ├── packages.nix
+│   ├── shell.nix
+│   ├── git.nix
+│   └── neovim.nix
+└── dots/                      # raw dotfiles (symlinked via xdg.configFile)
+    ├── hypr/
+    ├── kitty/
+    └── nvim/
 ```
 
 ## rebuild
@@ -34,3 +40,5 @@ config/
 ```bash
 nrs
 ```
+
+> `nrs` is an alias for `sudo nixos-rebuild switch --flake ~/nix-dots#nixos`
