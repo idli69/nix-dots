@@ -14,19 +14,12 @@
 
   # Qt is fully managed by Stylix via qtct (qt5ct/qt6ct with rose-pine colors)
 
-  # idle daemon
-  services.hypridle.enable = true;
-
   # notification daemon (systemd user service — no exec-once needed)
   services.swaync.enable = true;
-
-  # lock screen
-  programs.hyprlock.enable = true;
 
   # Stylix targets
   stylix.targets = {
     swaync.enable  = true;
     rofi.enable    = true;
-    hyprlock.enable = true;
   };
 }
