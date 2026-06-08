@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  dotfiles  = "${config.home.homeDirectory}/nix-dots/config";
+  dotfiles  = "${config.home.homeDirectory}/nix-dots/dots";
   mkSymlink = path: config.lib.file.mkOutOfStoreSymlink path;
   configs   = {
     hypr = "hypr";

@@ -1,6 +1,6 @@
 { pkgs, pkgs-unstable, ... }:
 {
-  imports = [ ../hardware-configuration.nix ];
+  imports = [ ./hardware-configuration.nix ];
 
   # boot
   boot.loader.systemd-boot.enable = true;
