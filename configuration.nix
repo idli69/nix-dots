@@ -54,7 +54,11 @@
     curl
     git
   ];
-  fonts.packages = with pkgs; [ nerd-fonts.geist-mono ];
+  fonts.packages = with pkgs; [
+    nerd-fonts.geist-mono
+    inter
+    geist-font
+  ];
   nixpkgs.config.allowUnfree = true;
   nix = {
     settings = {

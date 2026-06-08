@@ -13,7 +13,6 @@ NixOS flake config. Hyprland on nixos-26.05, with Hyprland itself pulled from un
 | **editor** | neovim |
 | **browser** | chromium |
 | **launcher** | rofi |
-| **font** | Geist Mono Nerd Font |
 
 ## structure
 
