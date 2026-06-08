@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    neovim
     fd
     ripgrep
     emmylua-ls
@@ -16,10 +17,4 @@
     pnpm
     gcc
   ];
-
-  programs.neovim = {
-    enable   = true;
-    viAlias  = true;
-    vimAlias = true;
-  };
 }
