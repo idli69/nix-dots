@@ -4,9 +4,12 @@ let
   dotfiles  = "${config.home.homeDirectory}/nix-dots/dots";
   mkSymlink = path: config.lib.file.mkOutOfStoreSymlink path;
   configs   = {
-    hypr = "hypr";
-    kitty    = "kitty";
-    nvim     = "nvim";
+    "hypr/hyprland.lua"        = "hypr/hyprland.lua";
+    "hypr/.emmyrc.json"        = "hypr/.emmyrc.json";
+    "kitty/kitty.conf"         = "kitty/kitty.conf";
+    "kitty/current-theme.conf" = "kitty/current-theme.conf";
+    "nvim/init.lua"            = "nvim/init.lua";
+    "nvim/nvim-pack-lock.json" = "nvim/nvim-pack-lock.json";
   };
 in
 

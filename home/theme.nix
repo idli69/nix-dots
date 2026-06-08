@@ -12,10 +12,21 @@
   # force stubborn GTK4/Libadwaita apps to respect the theme under Hyprland
   home.sessionVariables.GTK_THEME = "rose-pine";
 
-  # mirror GTK theme in Qt apps (VLC, KeePassXC, etc.)
-  qt = {
-    enable             = true;
-    platformTheme.name = "gtk";
-    style.name         = "adwaita-dark";
+  # Qt is fully managed by Stylix via qtct (qt5ct/qt6ct with rose-pine colors)
+
+  # idle daemon
+  services.hypridle.enable = true;
+
+  # notification daemon (systemd user service — no exec-once needed)
+  services.swaync.enable = true;
+
+  # lock screen
+  programs.hyprlock.enable = true;
+
+  # Stylix targets
+  stylix.targets = {
+    swaync.enable  = true;
+    rofi.enable    = true;
+    hyprlock.enable = true;
   };
 }

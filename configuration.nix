@@ -58,7 +58,7 @@
     nerd-fonts.geist-mono
     inter
     geist-font
-    noto-fonts-emoji
+    noto-fonts-color-emoji
   ];
 
   # theming
@@ -74,7 +74,7 @@
       serif     = { package = pkgs.geist-font;            name = "Geist"; };
       sansSerif = { package = pkgs.geist-font;            name = "Geist"; };
       monospace = { package = pkgs.nerd-fonts.geist-mono; name = "GeistMono Nerd Font"; };
-      emoji     = { package = pkgs.noto-fonts-emoji;      name = "Noto Color Emoji"; };
+      emoji     = { package = pkgs.noto-fonts-color-emoji; name = "Noto Color Emoji"; };
       sizes = { applications = 11; desktop = 11; terminal = 13; popups = 11; };
     };
 

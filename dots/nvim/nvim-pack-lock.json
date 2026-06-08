@@ -1,12 +1,1 @@
-{
-  "plugins": {
-    "nvim-lspconfig": {
-      "rev": "229b79051b380377664edc4cbd534930154921a1",
-      "src": "https://www.github.com/neovim/nvim-lspconfig.git"
-    },
-    "rose-pine": {
-      "rev": "ff483051a47e27d84bdef47703538df1ed9f4a47",
-      "src": "https://github.com/rose-pine/neovim"
-    }
-  }
-}
+/nix/store/7vijh40398w3zay7p4y6xha4f6hp2zbs-home-manager-files/.config/nvim/nvim-pack-lock.json

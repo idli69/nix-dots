@@ -1,14 +1,1 @@
-vim.opt.number = true
-
-vim.pack.add({
-	{ src = "https://www.github.com/neovim/nvim-lspconfig.git"},
-	{
-		src = "https://github.com/rose-pine/neovim",
-		name = "rose-pine",
-	},
-})
-
-require("rose-pine").setup()
-vim.cmd("colorscheme rose-pine")
-
-vim.lsp.enable("nil_ls")
+/nix/store/7vijh40398w3zay7p4y6xha4f6hp2zbs-home-manager-files/.config/nvim/init.lua

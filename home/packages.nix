@@ -13,10 +13,16 @@
     grim
     slurp
     wl-clipboard
+    cliphist
     swaybg
     wlogout
+    hyprpicker
+    yazi
+    thunar
+    thunar-archive-plugin
 
     # browser
+    firefox-devedition
     chromium
 
     # dev
