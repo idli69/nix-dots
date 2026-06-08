@@ -7,7 +7,7 @@
     ripgrep
 
     # desktop
-    fuzzel
+    rofi
     kitty
     brightnessctl
     grim
@@ -15,6 +15,9 @@
     wl-clipboard
     swaybg
     wlogout
+
+    # browser
+    chromium
 
     # dev
     gh

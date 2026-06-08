@@ -23,7 +23,7 @@ hl.monitor({
 ---------------------
 
 local terminal = "kitty"
-local menu     = "fuzzel"
+local menu     = "rofi -show drun"
 local mainMod  = "SUPER"
 
 
@@ -74,7 +74,7 @@ hl.config({
     },
 
     animations = {
-        enabled = true,
+        enabled = false,
     },
 
     misc = {
@@ -83,20 +83,7 @@ hl.config({
     },
 })
 
--- Curves
-hl.curve("easeOut", { type = "bezier", points = { {0.23, 1}, {0.32, 1} } })
-hl.curve("quick",   { type = "bezier", points = { {0.15, 0}, {0.1,  1} } })
-
--- Animations
-hl.animation({ leaf = "windows",    enabled = true, speed = 4,    spring = "easy",  style = "popin 85%" })
-hl.animation({ leaf = "workspaces", enabled = true, speed = 4,    bezier = "easeOut" })
-hl.animation({ leaf = "fade",       enabled = true, speed = 3,    bezier = "quick" })
-
-
----------------
 ---- INPUT ----
----------------
-
 hl.config({
     input = {
         kb_layout    = "us",
