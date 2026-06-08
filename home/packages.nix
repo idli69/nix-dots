@@ -1,24 +1,24 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    # shell utils
+    # shell
     eza
     fzf
     ripgrep
 
-    # wayland / desktop
-    swaybg
+    # desktop
     fuzzel
     kitty
     brightnessctl
     grim
+    slurp
+    wl-clipboard
+    swaybg
+    wlogout
 
     # dev
-    neovim
-    nil
-    nodejs
-    gcc
-
-    antigravity
+    gh
+    lazygit
+    zed-editor
   ];
 }
