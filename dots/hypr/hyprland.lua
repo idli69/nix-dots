@@ -24,7 +24,7 @@ hl.monitor({
 ---------------------
 
 local terminal = "kitty"
-local menu     = "rofi -show drun"
+local menu     = "noctalia msg panel-toggle launcher"
 local mainMod  = "SUPER"
 
 
@@ -33,7 +33,6 @@ local mainMod  = "SUPER"
 -------------------
 
 hl.on("hyprland.start", function()
-    hl.exec_cmd("swaybg -i ~/nix-dots/dots/walls/dragon.png")
     hl.exec_cmd("wl-paste --type text  --watch cliphist store")
     hl.exec_cmd("wl-paste --type image --watch cliphist store")
 end)
@@ -118,11 +117,8 @@ hl.bind(mainMod .. " + M",      hl.dsp.exit())
 -- Apps
 hl.bind(mainMod .. " + E",          hl.dsp.exec_cmd("thunar"))
 hl.bind(mainMod .. " + Y",          hl.dsp.exec_cmd("kitty -e yazi"))
-hl.bind(mainMod .. " + N",          hl.dsp.exec_cmd("swaync-client -t -sw"))
+hl.bind(mainMod .. " + N",          hl.dsp.exec_cmd("noctalia msg panel-toggle control-center"))
 hl.bind(mainMod .. " + P",          hl.dsp.exec_cmd("hyprpicker -a"))
-hl.bind(mainMod .. " + SHIFT + V",  hl.dsp.exec_cmd(
-    "cliphist list | rofi -drun-categories '' -dmenu -p 'Clipboard' | cliphist decode | wl-copy"
-))
 
 -- Focus (vim keys)
 hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left"  }))
@@ -151,11 +147,11 @@ hl.bind(mainMod .. " + SHIFT + S",
     hl.dsp.exec_cmd("grim -g \"$(slurp)\" - | wl-copy"))
 
 -- Brightness & volume
-hl.bind("XF86MonBrightnessUp",   hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
-hl.bind("XF86AudioRaiseVolume",  hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume",  hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),      { locked = true, repeating = true })
-hl.bind("XF86AudioMute",         hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),     { locked = true })
+hl.bind("XF86MonBrightnessUp",   hl.dsp.exec_cmd("noctalia msg brightness-up"),   { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("noctalia msg brightness-down"), { locked = true, repeating = true })
+hl.bind("XF86AudioRaiseVolume",  hl.dsp.exec_cmd("noctalia msg volume-up"),       { locked = true, repeating = true })
+hl.bind("XF86AudioLowerVolume",  hl.dsp.exec_cmd("noctalia msg volume-down"),     { locked = true, repeating = true })
+hl.bind("XF86AudioMute",         hl.dsp.exec_cmd("noctalia msg volume-mute"),     { locked = true })
 
 
 --------------------------------

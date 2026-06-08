@@ -30,6 +30,9 @@
     enable = true;
     memoryPercent = 50;
   };
+  hardware.bluetooth.enable = true;
+  services.upower.enable = true;
+  services.power-profiles-daemon.enable = true;
 
   # desktop
   programs.hyprland = {
@@ -61,30 +64,6 @@
     noto-fonts-color-emoji
   ];
 
-  # theming
-  stylix = {
-    enable     = true;
-    autoEnable = true;
-    polarity   = "dark";
-
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
-    image        = ./dots/walls/dragon.png;
-
-    fonts = {
-      serif     = { package = pkgs.geist-font;            name = "Geist"; };
-      sansSerif = { package = pkgs.geist-font;            name = "Geist"; };
-      monospace = { package = pkgs.nerd-fonts.geist-mono; name = "GeistMono Nerd Font"; };
-      emoji     = { package = pkgs.noto-fonts-color-emoji; name = "Noto Color Emoji"; };
-      sizes = { applications = 11; desktop = 11; terminal = 13; popups = 11; };
-    };
-
-    cursor = {
-      package = pkgs.rose-pine-cursor;
-      name    = "BreezeX-RosePine-Linux";
-      size    = 24;
-    };
-  };
-
   nixpkgs.config.allowUnfree = true;
   nix = {
     settings = {
@@ -93,6 +72,8 @@
         "flakes"
       ];
       auto-optimise-store = true;
+      extra-substituters = [ "https://noctalia.cachix.org" ];
+      extra-trusted-public-keys = [ "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4=" ];
     };
     gc = {
       automatic = true;

@@ -10,21 +10,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    stylix = {
-      url = "github:nix-community/stylix/release-26.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    noctalia.url = "github:noctalia-dev/noctalia-shell/v5";
   };
 
   outputs =
     {
-      # self,
+      self,
       nixpkgs,
       nixpkgs-unstable,
       home-manager,
-      stylix,
       ...
-    }:
+    }@inputs:
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -35,13 +31,13 @@
 
         modules = [
           ./configuration.nix
-          stylix.nixosModules.stylix
           home-manager.nixosModules.home-manager
           {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
               backupFileExtension = "backup";
+              extraSpecialArgs = { inherit inputs; };
               users.idli = import ./home/home.nix;
             };
           }

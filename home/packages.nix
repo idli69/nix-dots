@@ -7,15 +7,13 @@
     ripgrep
 
     # desktop
-    rofi
     kitty
+    ghostty
     brightnessctl
     grim
     slurp
     wl-clipboard
     cliphist
-    swaybg
-    wlogout
     hyprpicker
     yazi
     thunar

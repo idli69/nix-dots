@@ -17,6 +17,7 @@ in
     ./shell.nix
     ./git.nix
     ./theme.nix
+    ./noctalia.nix
   ];
 
   home.username = "idli";
